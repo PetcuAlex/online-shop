@@ -22,18 +22,14 @@ public class Cart {
     private Set<Product> products = new HashSet<>();
 
     public void addToCart(Product product) {
-        // adding received product to current cart
         products.add(product);
 
-        // associating current cart with the received product
         product.getCarts().add(this);
     }
 
     public void removeFromCart(Product product) {
-        // adding received product to current cart
         products.remove(product);
 
-        // associating current cart with the received product
         product.getCarts().remove(this);
     }
 

@@ -3,7 +3,6 @@ package org.fasttrackit.onlineshop.transfer.product;
 public class GetProductsRequest {
 
     private String partialName;
-    // wrapper classes accept null values as well
     private Integer minimumQuantity;
 
     public String getPartialName() {

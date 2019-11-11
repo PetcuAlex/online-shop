@@ -26,10 +26,8 @@ public class ProductService {
     private static final Logger LOGGER =
             LoggerFactory.getLogger(ProductService.class);
 
-    // IoC - Inversion of Control
     private final ProductRepository productRepository;
 
-    // Dependency Injection
     @Autowired
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
@@ -50,7 +48,6 @@ public class ProductService {
 
     public Product getProduct(long id) {
         LOGGER.info("Retrieving product {}", id);
-        // using Optional
         return productRepository.findById(id)
                 // lambda expressions
                 .orElseThrow(() ->

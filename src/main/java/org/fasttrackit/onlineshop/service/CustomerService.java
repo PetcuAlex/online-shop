@@ -17,10 +17,8 @@ public class CustomerService {
     private static final Logger LOGGER =
             LoggerFactory.getLogger(CustomerService.class);
 
-    // IoC - Inversion of Control
     private final CustomerRepository customerRepository;
 
-    // Dependency Injection
     @Autowired
     public CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
@@ -38,7 +36,6 @@ public class CustomerService {
 
     public Customer getCustomer(long id) {
         LOGGER.info("Retrieving customer {}", id);
-        // using Optional
         return customerRepository.findById(id)
                 // lambda expressions
                 .orElseThrow(() ->

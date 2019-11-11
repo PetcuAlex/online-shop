@@ -36,8 +36,6 @@ public class ProductServiceIntegrationTests {
     @Test(expected = TransactionSystemException.class)
     public void testCreateProduct_whenInvalidRequest_thenThrowException() {
         SaveProductRequest request = new SaveProductRequest();
-        // we're not setting any values on the request,
-        // because we want to send an invalid request
 
         productService.createProduct(request);
     }
